@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#423752"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_horizontal_ntb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:title="@string/app_name"
+            app:expandedTitleTextAppearance="@null"
+            app:contentScrim="#605271"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_gravity="center"
+            android:foregroundGravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/backdrop"
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:src="@drawable/toxic"
+                    app:layout_collapseMode="pin"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="• COVID - 19 •"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>>
+        <FrameLayout
+            android:id="@+id/wrapper_ntb_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <app.covid2019.support.ntb.NavigationTabBar
+                android:id="@+id/ntb_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:ntb_bg_color="#605271"
+                app:ntb_title_size="12sp"
+                app:ntb_badge_bg_color="#ffff0000"
+                app:ntb_badge_gravity="bottom"
+                app:ntb_badge_position="left"
+                app:ntb_badge_title_color="#ffffffff"
+                app:ntb_badge_use_typeface="true"
+                app:ntb_badged="true"
+                app:ntb_title_mode="active"
+                app:ntb_titled="true"
+                app:ntb_scaled="false"
+                app:ntb_typeface="fonts/agency.ttf"/>
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/mask"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
